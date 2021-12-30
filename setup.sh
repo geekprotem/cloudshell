@@ -17,9 +17,6 @@ if [ ! -f ~/.local/bin/kubectl ]
 then
     curl -fsSL -o ~/.local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.13/bin/linux/amd64/kubectl
 fi
-chmod +x ~/.local/bin/kubectl
-alias kubectl=~/.local/bin/kubectl
-kubectl version
 
 ##### helm
 if [ ! -f ~/.local/bin/get_helm.sh ]
@@ -27,13 +24,11 @@ then
     curl -fsSL -o ~/.local/bin/get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 fi
 
+cp bin/* ~/.local/bin/
+chmod +x ~/.local/bin/*
+pathadd '/home/cloudshell-user/.local/bin'
+
 if [ ! -f /usr/local/bin/helm ]
 then
     sh ~/.local/bin/get_helm.sh
 fi
-helm version
-
-cp bin/* ~/.local/bin/
-chmod +x ~/.local/bin/*
-pathadd '/home/cloudshell-user/.local/bin'
-# alias select_cluster='~/.local/bin/select_cluster.sh'
