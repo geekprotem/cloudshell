@@ -4,6 +4,12 @@ then
     sudo yum install openssl -y
 fi
 
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
 mkdir -p ~/.local/bin
 
 ##### kubectl
@@ -28,4 +34,5 @@ fi
 helm version
 
 cp bin/* ~/.local/bin/
-alias select_cluster='sh ~/.local/bin/select_cluster.sh'
+pathadd(~/.local/bin)
+# alias select_cluster='sh ~/.local/bin/select_cluster.sh'
