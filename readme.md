@@ -8,7 +8,10 @@ Some basic AWS CloudShell things to keep in sync across instances.
 Add the following lines to your cloudshell's `.bashrc` file 
 
 ```
-git clone https://github.com/geekprotem/cloudshell.git
+if [ ! -d cloudshell ]
+then
+    git clone https://github.com/geekprotem/cloudshell.git
+fi
 cd cloudshell
 git pull
 sh setup.sh

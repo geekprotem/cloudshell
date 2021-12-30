@@ -25,4 +25,7 @@ if [ ! -f /usr/local/bin/helm ]
 then
     sh ~/.local/bin/get_helm.sh
 fi
+helm version
 
+cp bin/* ~/.local/bin/
+alias select_cluster=~/.local/bin/select_cluster.sh
