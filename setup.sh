@@ -34,5 +34,6 @@ fi
 helm version
 
 cp bin/* ~/.local/bin/
+chmod +x ~/.local/bin/*
 pathadd '/home/cloudshell-user/.local/bin'
-# alias select_cluster='sh ~/.local/bin/select_cluster.sh'
+# alias select_cluster='~/.local/bin/select_cluster.sh'

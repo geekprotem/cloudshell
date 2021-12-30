@@ -1,3 +1,4 @@
+#!/usr/bin/bash
 
 cluster=$1
 
