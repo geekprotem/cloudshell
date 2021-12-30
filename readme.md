@@ -10,5 +10,6 @@ Add the following lines to your cloudshell's `.bashrc` file
 ```
 git clone https://github.com/geekprotem/cloudshell.git
 cd cloudshell
+git pull
 sh setup.sh
 ```
