@@ -1,13 +1,16 @@
 
+if [ ! -f /usr/bin/openssl ]
+then
 sudo yum install openssl -y
+done
 
 mkdir -p ~/.local/bin
 
 if [ ! -f ~/.local/bin/kubectl ]
 then
-    curl -LO -o ~/.local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.13/bin/linux/amd64/kubectl
-    chmod +x ~/.local/bin/kubectl
+    curl -fsSL -o ~/.local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.18.13/bin/linux/amd64/kubectl
 fi
+chmod +x ~/.local/bin/kubectl
 alias kubectl=~/.local/bin/kubectl
 kubectl version
 
