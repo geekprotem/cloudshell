@@ -10,7 +10,10 @@ pathadd() {
     fi
 }
 
-mkdir -p ~/.local/bin
+if [ ! -d ~/.local/bin ]
+then
+    mkdir -p ~/.local/bin
+fi
 
 ##### kubectl
 if [ ! -f ~/.local/bin/kubectl ]
