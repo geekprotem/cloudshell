@@ -19,7 +19,7 @@ kubectl version
 if [ ! -f ~/.local/bin/get_helm.sh ]
 then
     curl -fsSL -o ~/.local/bin/get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-done
+fi
 
 if [ ! -f /usr/local/bin/helm ]
 then
