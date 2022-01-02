@@ -15,4 +15,5 @@ fi
 cd cloudshell
 git pull
 sh setup.sh
+cd
 ```
